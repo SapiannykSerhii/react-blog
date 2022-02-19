@@ -6,11 +6,15 @@ import EditPost from "./components/pages/EditPost";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
 import SinglePost from "./components/pages/SinglePost";
+import Footer from "./components/views/Footer";
+import Header from "./components/views/Header";
+
 
 
 function App() {
   return (
     <Container>
+      <Header/>
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path= "/post/:id" element= { <SinglePost/> }/>
@@ -19,6 +23,7 @@ function App() {
         <Route path="/about" element = { <About/> } />
         <Route path="*" element = { <NotFound/> } />
       </Routes>
+      <Footer/>
     </Container>
   );
 }
