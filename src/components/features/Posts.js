@@ -15,23 +15,24 @@ const Posts = () => {
         </Link>
       </div>
     <Row className="mt-2 g-4">
-      {
-        posts.map( 
-          post => <Col key={post.id}>
+       {
+        posts.map( post => ( 
+          <Col key={post.id} >
             <Card>
               <Card.Body>
                 <Card.Title className="mb-3">{post.title}</Card.Title>
                 <Card.Subtitle className="mt-2"><span>Author:</span>{post.author}</Card.Subtitle>
                 <Card.Subtitle className="mt-2"><span>Published:</span>{post.publishedDate}</Card.Subtitle>
                 <Card.Text className="mt-2">{post.shortDescription}</Card.Text>
-                <Link className="mt-auto" to={"/post/:id"} key={post.id}>
+                <Link className="mt-auto" to={"/post/" + post.id} key={post.id}>
                   <Button variant="primary">Read more</Button>
                 </Link>
               </Card.Body>
             </Card>
           </Col>
-        )
-      }
+        ))
+      } 
+       
     </Row>
     </section>
   )
