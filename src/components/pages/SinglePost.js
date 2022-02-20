@@ -1,12 +1,3 @@
-
-
-// const SinglePost = () => {
-//   return (
-//     <h2>Single Post</h2>
-//   )
-// }
-// export default SinglePost;
-
 import { useState } from "react"
 import { Button, Col, Modal, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
@@ -67,4 +58,4 @@ const SinglePost = () => {
   )
 }
 
-export default SinglePost;
+export default SinglePost

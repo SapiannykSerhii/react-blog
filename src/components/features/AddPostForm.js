@@ -8,8 +8,8 @@ const AddPostForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const hundleSubmit = post => {
-    dispatch( addPost ( post ) )
+  const hundleSubmit = postAdd => {
+    dispatch( addPost ( postAdd ) )
     navigate("/")
   }
 
