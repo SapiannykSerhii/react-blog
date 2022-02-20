@@ -50,7 +50,7 @@ const SinglePost = () => {
         <Modal.Body>This operation will completely remove the post. Are you sure you want to do that?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-          <Button variant="danger" onClick={function(e){ handleClose(); remove()}}>Remove</Button>
+          <Button variant="danger" onClick={ () => { handleClose(); remove() } }>Remove</Button>
         </Modal.Footer>
       </Modal>
     </article>
