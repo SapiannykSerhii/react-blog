@@ -3,7 +3,7 @@ import { Button, Col, Modal, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, Navigate, useParams } from "react-router-dom"
 import { getPostById, removePost } from "../../Redux/postsRedux"
-
+import { dateToStr } from "../../utils/dateToStr"
 
 
 const SinglePost = () => {
@@ -40,9 +40,11 @@ const SinglePost = () => {
         </Col>
       </Row>
       <h3><span>Author: </span>{postData.author}</h3>
-      <h4><span>Published: </span>{postData.publishedDate}</h4>
+      {/* <h4><span>Published: </span>{postData.publishedDate}</h4> */}
+      <h4><span>Published: </span>{dateToStr(postData.publishedDate)}</h4>
       <br/>
-      <p>{postData.content}</p>
+      {/* <p>{postData.content}</p> */}
+      <p dangerouslySetInnerHTML={{ __html: postData.content }} />
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Are you sure?</Modal.Title>
