@@ -39,12 +39,12 @@ const SinglePost = () => {
           <Button variant="outline-danger" onClick={handleShow}>Delete</Button>
         </Col>
       </Row>
-      <h3><span>Author: </span>{postData.author}</h3>
-      {/* <h4><span>Published: </span>{postData.publishedDate}</h4> */}
-      <h4><span>Published: </span>{dateToStr(postData.publishedDate)}</h4>
+      <p><span>Author: </span>{postData.author}</p>
+      <p><span>Published: </span>{dateToStr(postData.publishedDate)}</p>
       <br/>
-      {/* <p>{postData.content}</p> */}
-      <p dangerouslySetInnerHTML={{ __html: postData.content }} />
+      <div>
+        <p dangerouslySetInnerHTML={{ __html: postData.content }} />
+      </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Are you sure?</Modal.Title>

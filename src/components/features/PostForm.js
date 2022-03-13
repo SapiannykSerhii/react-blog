@@ -13,8 +13,8 @@ function PostForm({ action, actionText, ...props }) {
   const [publishedDate, setPublishedDate] = useState(
     props.publishedDate || new Date());
   const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
-  const [content, /*setContent */] = useState(props.content || '');
-  const [value, setValue] = useState('');
+  const [content, setContent ] = useState(props.content || '');
+ 
 
   const hundleSubmit = e => {
     e.preventDefault();
@@ -42,12 +42,11 @@ function PostForm({ action, actionText, ...props }) {
 
       <Form.Group className="mb-3" controlId="formPublishedDate">
         <Form.Label>Published</Form.Label>
-        
-        <Form.Control type="date"
-                      placeholder="Enter date"
-                      value={publishedDate}
-                      onChange={e => setPublishedDate(e.target.value)}
-            />
+
+        <DatePicker
+            selected={publishedDate}
+            onChange={(date) => setPublishedDate(date)}
+          />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formShordDescription">
@@ -62,14 +61,7 @@ function PostForm({ action, actionText, ...props }) {
       <Form.Group className="mb-3" controlId="formContent">
         <Form.Label>Main content</Form.Label>
 
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
-
-        {/* <Form.Control as="textarea"
-                          rows={10}
-                          placeholder="Test"
-                          value={content}
-                          onChange={e => setContent(e.target.value)}
-            /> */}
+        <ReactQuill theme="snow" value={content} onChange={setContent} />
       </Form.Group>
 
 
