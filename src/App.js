@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import About from "./components/pages/About";
 import AddPost from "./components/pages/AddPost";
+import Categories from "./components/pages/Categories";
 import EditPost from "./components/pages/EditPost";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
@@ -22,6 +23,7 @@ function App() {
         <Route path= "/post/edit/:id" element = { <EditPost/> }/>
         <Route path="/about" element = { <About/> } />
         <Route path="*" element = { <NotFound/> } />
+        <Route path="/categories" element = { <Categories/> } />
       </Routes>
       <Footer/>
     </Container>

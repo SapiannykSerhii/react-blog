@@ -6,6 +6,9 @@ import React from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm } from "react-hook-form"
+import { useSelector } from "react-redux";
+import { getAllCategories } from "../../Redux/categoriesReducer";
+
 
 function PostForm({ action, actionText, ...props }) {
 
@@ -19,13 +22,18 @@ function PostForm({ action, actionText, ...props }) {
   const [content, setContent ] = useState(props.content || '');
   const [contentError, setContentError] = useState(false);
   const [dateError, setDateError] = useState(false);
+  
+  const [category] = useState(props.category || '')
  
+  
+  const categories = useSelector(state => getAllCategories(state))
+  // console.log(categories);
 
   const hundleSubmit = () => {
     setContentError(!content)
     setDateError(!publishedDate)
     if(content && publishedDate) {
-      action({ title, author, publishedDate, shortDescription, content });
+      action({ title, author, publishedDate, shortDescription, content, category });
     }
   };
 
@@ -63,6 +71,16 @@ function PostForm({ action, actionText, ...props }) {
           />
           {dateError && <small className="d-block from-text text-danger mt-2">Date can't be empty</small>}
       </Form.Group>
+
+      <Form.Select>
+            {categories.map(category =>
+              (<option key={category.id}
+                  value={category.name}>
+                  {category.name}
+              </option>
+              ))
+            }
+    </ Form.Select>
 
       <Form.Group className="mb-3" controlId="formShordDescription">
         <Form.Label>Short description</Form.Label>

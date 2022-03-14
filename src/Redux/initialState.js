@@ -7,7 +7,8 @@ const initialState ={
       shortDescription: 'Short description of the article...',
       content: 'Main content of the article',
       publishedDate: new Date('02-02-2022'),
-      author: 'John Doe'
+      author: 'John Doe',
+      category: 'Movie'
     },
 
     {
@@ -16,7 +17,8 @@ const initialState ={
       shortDescription: 'Short description of the article...',
       content: 'First content of the article',
       publishedDate: new Date('02-02-2022'),
-      author: 'John Doe'
+      author: 'Steve Jobs',
+      category: 'Game'
     },
 
     {
@@ -25,7 +27,8 @@ const initialState ={
       shortDescription: 'Short description of the article...',
       content: 'Second content of the article',
       publishedDate: new Date('02-02-2022'),
-      author: 'John Doe'
+      author: 'Taras Shevchenko',
+      category: 'Writer'
     },
 
     {
@@ -34,8 +37,29 @@ const initialState ={
       shortDescription: 'Short description of the article...',
       content: 'Third Main content of the article',
       publishedDate: new Date('02-02-2022'),
-      author: 'John Doe'
+      author: 'Ivan Sirko',
+      category: 'History'
     }
+  ],
+
+  categories: [ 
+    {
+      id: 1,
+      name: 'Movie'
+    },
+    {
+      id: 2,
+      name: 'Game'
+    },
+    {
+      id: 3,
+      name: 'Write'
+    },
+    {
+      id: 4,
+      name: 'History'
+    }
+
   ]
 }
 

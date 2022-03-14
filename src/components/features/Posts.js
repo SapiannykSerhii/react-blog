@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { getAllPosts } from "../../Redux/postsRedux"
-import { Button, Card,  Col, Row } from "react-bootstrap"
+import { Button, Card,  Col, Row} from "react-bootstrap"
 import { dateToStr } from "../../utils/dateToStr"
 
 const Posts = () => {
@@ -22,8 +22,9 @@ const Posts = () => {
             <Card>
               <Card.Body>
                 <Card.Title className="mb-3">{post.title}</Card.Title>
-                <Card.Subtitle className="mt-2"><span>Author:</span>{post.author}</Card.Subtitle>
-                <Card.Subtitle className="mt-2"><span>Published:</span>{dateToStr(post.publishedDate)}</Card.Subtitle>
+                <Card.Subtitle className="mt-2"><span>Author: </span>{post.author}</Card.Subtitle>
+                <Card.Subtitle className="mt-2"><span>Published: </span>{dateToStr(post.publishedDate)}</Card.Subtitle>
+                <Card.Text className="mt-2"><span>Category: </span>{post.category}</Card.Text>
                 <Card.Text className="mt-2">{post.shortDescription}</Card.Text>
                 <Link className="mt-auto" to={"/post/" + post.id} key={post.id}>
                   <Button variant="primary">Read more</Button>

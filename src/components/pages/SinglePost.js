@@ -9,7 +9,6 @@ import { dateToStr } from "../../utils/dateToStr"
 const SinglePost = () => {
   const { id } = useParams();
   const postData = useSelector(state => getPostById(state, id))
-  // console.log(postData);
 
   const [show, setShow] = useState(false);
 
@@ -41,6 +40,7 @@ const SinglePost = () => {
       </Row>
       <p><span>Author: </span>{postData.author}</p>
       <p><span>Published: </span>{dateToStr(postData.publishedDate)}</p>
+      <p><span>Category: </span>{postData.category}</p>
       <br/>
       <div>
         <p dangerouslySetInnerHTML={{ __html: postData.content }} />
