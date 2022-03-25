@@ -23,7 +23,7 @@ function PostForm({ action, actionText, ...props }) {
   const [contentError, setContentError] = useState(false);
   const [dateError, setDateError] = useState(false);
   
-  const [category] = useState(props.category || '')
+  const [category, setCategory] = useState(props.category || '')
  
   
   const categories = useSelector(state => getAllCategories(state))
@@ -72,7 +72,7 @@ function PostForm({ action, actionText, ...props }) {
           {dateError && <small className="d-block from-text text-danger mt-2">Date can't be empty</small>}
       </Form.Group>
 
-      <Form.Select>
+      <Form.Select onChange={(event) => setCategory(event.target.value)} value={category}>
             {categories.map(category =>
               (<option key={category.id}
                   value={category.name}>
