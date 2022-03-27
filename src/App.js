@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import About from "./components/pages/About";
 import AddPost from "./components/pages/AddPost";
 import Categories from "./components/pages/Categories";
+import CategoryView from "./components/pages/CategoryView";
 import EditPost from "./components/pages/EditPost";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element = { <About/> } />
         <Route path="*" element = { <NotFound/> } />
         <Route path="/categories" element = { <Categories/> } />
+        <Route path="/categories/:categoryName" element = { < CategoryView/> }/>
       </Routes>
       <Footer/>
     </Container>

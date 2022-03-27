@@ -53,7 +53,7 @@ const initialState ={
     },
     {
       id: 3,
-      name: 'Write'
+      name: 'Writer'
     },
     {
       id: 4,

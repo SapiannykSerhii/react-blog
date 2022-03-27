@@ -20,7 +20,6 @@ const SinglePost = () => {
   const remove = () => {
     dispatch( removePost (postData.id))
   }
-  
 
 
   if(!postData) return <Navigate to="/"/>
@@ -28,7 +27,7 @@ const SinglePost = () => {
     <>
     <article >
       <Row className="d-flex justify-content-between">
-        <Col >
+        <Col className="fw-bold">
           <h2>{postData.title}</h2>
         </Col>
         <Col>
@@ -38,9 +37,9 @@ const SinglePost = () => {
           <Button variant="outline-danger" onClick={handleShow}>Delete</Button>
         </Col>
       </Row>
-      <p><span>Author: </span>{postData.author}</p>
-      <p><span>Published: </span>{dateToStr(postData.publishedDate)}</p>
-      <p><span>Category: </span>{postData.category}</p>
+      <p><span className="fw-bold">Author: </span>{postData.author}</p>
+      <p><span className="fw-bold">Published: </span>{dateToStr(postData.publishedDate)}</p>
+      <p><span className="fw-bold">Category: </span>{postData.category}</p>
       <br/>
       <div>
         <p dangerouslySetInnerHTML={{ __html: postData.content }} />

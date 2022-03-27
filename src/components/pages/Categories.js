@@ -7,17 +7,18 @@ const Categories = () => {
 
   const categories = useSelector(state => getAllCategories(state))
   console.log(categories);
+ 
 
   return (
     <>
       <h2>Categories</h2>
-      <ul>
+      <h5 className="pt-3">
         {
            categories.map(category => (
-            <li key={category.id}><Link to={`/categories/${category.name}`}>{category.name}</Link></li>
+            <ol key={category.id}><Link to={`/categories/${category.name}`}>{category.name}</Link></ol>
           ))
         }
-      </ul>
+      </h5>
     </>
   )
 }

@@ -8,4 +8,6 @@ export const dateToStr = (date) => {
     date.getFullYear(),
   ].join('/');
 };
+export default dateToStr
+
 

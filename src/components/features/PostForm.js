@@ -72,15 +72,17 @@ function PostForm({ action, actionText, ...props }) {
           {dateError && <small className="d-block from-text text-danger mt-2">Date can't be empty</small>}
       </Form.Group>
 
-      <Form.Select onChange={(event) => setCategory(event.target.value)} value={category}>
-            {categories.map(category =>
-              (<option key={category.id}
-                  value={category.name}>
-                  {category.name}
-              </option>
-              ))
-            }
-    </ Form.Select>
+      <Form.Group className="mb-3">
+        <Form.Select onChange={(event) => setCategory(event.target.value)} value={category}>
+                {categories.map(category =>
+                  ( <option key={category.id}
+                      value={category.name}>
+                      {category.name}
+                    </option>
+                  ))
+                }
+        </ Form.Select>
+      </Form.Group>
 
       <Form.Group className="mb-3" controlId="formShordDescription">
         <Form.Label>Short description</Form.Label>
@@ -101,13 +103,13 @@ function PostForm({ action, actionText, ...props }) {
         {contentError && <small className="d-block form-text text-danger mt-2">Content can't be empty</small>}
       </Form.Group>
       
-
-
       <Button variant="primary" type="submit">
         Add Post
       </Button>
 
     </Form>
+
+
 
   );
 }
