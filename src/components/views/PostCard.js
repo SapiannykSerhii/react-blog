@@ -7,7 +7,7 @@ import dateToStr from '../../utils/dateToStr'
 const PostCard = ({ id }) => {
 
   const postDate = useSelector(state => getPostById(state, id))
-  console.log(postDate);
+  // console.log(postDate);
 
   return (
     <Card style={{ width: '15rem' }} className="text-center"  border="info">
@@ -21,7 +21,7 @@ const PostCard = ({ id }) => {
         <Card.Text className="mt-2"><span className="fw-bold">Category: </span>{postDate.category}</Card.Text>
 
         <Card.Text className="mt-2">{postDate.shortDescription}</Card.Text>
-        
+
         <Link className="mt-auto" to={`/post/${postDate.id}`}>
           <Button variant="primary">Read more</Button>
         </Link>

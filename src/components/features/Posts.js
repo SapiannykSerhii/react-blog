@@ -5,9 +5,9 @@ import { Button, Card,  Col, Row} from "react-bootstrap"
 import { dateToStr } from "../../utils/dateToStr"
 
 const Posts = () => {
+  
   const posts = useSelector(state => getAllPosts(state)) 
   // console.log(posts);
-  
   
   return (
     <section>
@@ -17,10 +17,10 @@ const Posts = () => {
         <Button variant="outline-primary">Add post</Button>
         </Link>
       </div>
-    <Row className="mt-5">
+    <Row className="mt-3">
      {
         posts.map( post => ( 
-          <Col key={post.id} >
+          <Col key={post.id} className="mt-3" >
             <Card style={{ width: '15rem' }} className="text-center"  border="info">
               <Card.Body>
                 <Card.Title className="mb-3 fw-bold">{post.title}</Card.Title>

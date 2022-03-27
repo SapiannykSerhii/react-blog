@@ -6,9 +6,8 @@ import { getAllCategories } from "../../Redux/categoriesReducer";
 const Categories = () => {
 
   const categories = useSelector(state => getAllCategories(state))
-  console.log(categories);
+  // console.log(categories);
  
-
   return (
     <>
       <h2>Categories</h2>
