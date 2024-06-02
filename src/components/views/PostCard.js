@@ -7,7 +7,7 @@ import dateToStr from '../../utils/dateToStr'
 const PostCard = ({ id }) => {
 
   const postDate = useSelector(state => getPostById(state, id))
-  // console.log(postDate);
+  console.log(postDate);
 
   return (
     <Card style={{ width: '15rem' }} className="text-center"  border="info">

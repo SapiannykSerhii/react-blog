@@ -2,7 +2,8 @@ import shortid from "shortid"
 
 //selectors
 export const getAllPosts = state => state.posts
-export const getPostById = ({ posts }, postId) => posts.find(post => post.id === postId )
+export const getPostById = ({ posts }, postId) => posts.find(post => post.id === postId)
+console.log(getPostById);
 export const getFilteredPosts = ({ posts }, categoryName) => posts.filter(post => post.category === categoryName) 
 
 //actions
@@ -25,7 +26,7 @@ const postsReducer = (statePart = [], action) => {
       return [...statePart, {...action.payload, id: shortid()} ]
       
     case EDIT_POST:
-      return statePart.map(post => (post.id === action.payload.id ? { ...post, ...action.payload } : post));  
+      return statePart.map(post => (post.id === action.payload.id ? { ...post, ...action.payload } : post)); 
 
     default:
       return statePart

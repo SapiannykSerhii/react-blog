@@ -9,7 +9,7 @@ import { dateToStr } from "../../utils/dateToStr"
 const SinglePost = () => {
   const { id } = useParams();
   const postData = useSelector(state => getPostById(state, id))
-
+  console.log(postData);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false)

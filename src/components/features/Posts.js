@@ -7,7 +7,7 @@ import { dateToStr } from "../../utils/dateToStr"
 const Posts = () => {
   
   const posts = useSelector(state => getAllPosts(state)) 
-  // console.log(posts);
+  console.log(posts);
   
   return (
     <section>

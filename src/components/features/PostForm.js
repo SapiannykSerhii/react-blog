@@ -22,7 +22,6 @@ function PostForm({ action, actionText, ...props }) {
   const [content, setContent ] = useState(props.content || '');
   const [contentError, setContentError] = useState(false);
   const [dateError, setDateError] = useState(false);
-  
   const [category, setCategory] = useState(props.category || '')
  
   
